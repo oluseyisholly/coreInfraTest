@@ -42,8 +42,8 @@ export const Dashboard = () => {
         <Card className={"p-[1.6rem]"}>
           <h3 className="typography5 pb-[1.3rem]">Your Quick Access</h3>
           <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-[0.8rem] ">
-            {quickAcessData.map((item) => (
-              <QuickAcessElement svg={item.svg} text={item.text} />
+            {quickAcessData.map((item, index) => (
+              <QuickAcessElement key={index} svg={item.svg} text={item.text} />
             ))}
           </div>
         </Card>
@@ -52,8 +52,9 @@ export const Dashboard = () => {
           <div className="border-t-[0.0038px] border-grey1 w-full h-[0px]"></div>
         </div>
         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-[0.8rem] pb-[0.8rem]">
-          {analyticsData.map((item) => (
+          {analyticsData.map((item, index) => (
             <AnalyticsElement
+              key={index}
               svg={item.svg}
               text={item.text}
               value={item.value}
@@ -92,8 +93,8 @@ export const Dashboard = () => {
                   "Action",
                 ]}
               >
-                {data.map((item) => (
-                  <tr>
+                {data.map((item, index) => (
+                  <tr key={index}>
                     <td>
                       <div>{item.branch}</div>
                     </td>
