@@ -12,6 +12,7 @@ import { CustomBarChart } from "../../custom/chart/bar";
 import { CustomLineChart } from "../../custom/chart/line";
 import { CustomPieChart } from "../../custom/chart/pie";
 import { Table } from "../../custom/table";
+import { getCurrentDateFormatted, getCurrentDateTime } from "../../utils";
 import { AnalyticsElement } from "./analyticsElement";
 import { QuickAcessElement } from "./quickAccessElement";
 import { TableStatus } from "./tableStatus";
@@ -20,23 +21,23 @@ export const Dashboard = () => {
   return (
     <>
       <div>
-        <div className="flex justify-between mb-[1.3rem]">
+        <div className="flex flex-col-reverse md:flex-row justify-between mb-[1.3rem]">
           <div className="flex flex-col gap-[0.6rem]">
             <h2 className="typography3 text-black">
               Hi Nazeer, what would you like to do today?
             </h2>
             <p className="typography4">
               {" "}
-              <span style={{ fontWeight: "600" }}>Last login:</span> 26/11/2024
-              14:39:58
+              <span style={{ fontWeight: "600" }}>Last login:</span>{" "}
+              {getCurrentDateTime()}
             </p>
           </div>
-          <div className=" text-black1 flex gap-[0.4rem] h-[3rem] px-[1.3rem] rounded-[0.4rem] items-center border-[0.01rem] border-grey1 ">
+          <div className="mb-[1rem] text-black1 flex gap-[0.4rem] h-[3rem] px-[1.3rem] rounded-[0.4rem] items-center border-[0.01rem] border-grey1 ">
             <div className="flex gap-[0.4rem] h-fit items-center typography12 text-[1.1rem] border-r-[0.06rem] border-grey1 pr-[0.8rem] ">
               <CalenderSvg />
               Today
             </div>
-            <p>11 Nov 2024</p>
+            <p>{getCurrentDateFormatted()}</p>
           </div>
         </div>
         <Card className={"p-[1.6rem]"}>

@@ -51,7 +51,7 @@ export function CustomPieChart() {
   }, []);
 
   return (
-    <ChartContainer config={chartConfig} className="md:max-h-[150rem]">
+    <ChartContainer config={chartConfig} className=" md:max-h-[150rem]">
       <PieChart>
         <ChartTooltip
           cursor={false}
